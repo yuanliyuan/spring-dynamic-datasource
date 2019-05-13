@@ -144,3 +144,5 @@ Caused by: mapping values are not allowed here
 	at org.springframework.boot.context.config.ConfigFileApplicationListener$Loader.loadIntoGroup(ConfigFileApplicationListener.java:473)
 	... 16 more
  -- [main] DESKTOP-RRDOHMK]
+[2019-05-13 22:33:27,465] [WARN ] -- [org.mybatis.spring.mapper.ClassPathMapperScanner No MyBatis mapper was found in '[com.wgmf.jz.mapper]' package. Please check your configuration.  -- [main] DESKTOP-RRDOHMK]
+[2019-05-13 22:33:32,738] [ERROR] -- [com.yl.swagger.SwaggerConfig swagger para:动态数据源,动态数据源接口,无API服务条款,(578598624@qq.com),1.0.0-SNAPSHOT  -- [main] DESKTOP-RRDOHMK]
