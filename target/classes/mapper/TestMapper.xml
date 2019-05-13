@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yl.mapper.TestMapper">
+
+	<select id="testMysql" resultType="com.yl.domain.Person">
+		select name as name from yl_test
+	</select>
+
+	<!--另一数据源-->
+	<select id="testOtherDataSource" resultType="com.yl.domain.Person">
+		select name as name from yl_test
+	</select>
+</mapper>

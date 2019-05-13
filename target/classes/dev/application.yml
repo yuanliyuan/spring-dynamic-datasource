@@ -1,0 +1,86 @@
+spring:
+ datasource:
+    wx:
+      url: jdbc:mysql://localhost:3306/yuanli##?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;failOverReadOnly=false&amp;zeroDateTimeBehavior=convertToNull
+      username: root
+      password: yuanli
+      driver-class-name: com.mysql.jdbc.Driver
+      initial-size: 5
+      max-idle: 10
+      min-idle: 5
+      max-active: 50
+      max-wait-millis: 10000
+      remove-abandoned-timeout: 180
+      test-on-borrow: true
+      test-on-return: false
+      validation-query: select 1 
+      test-while-idle: true
+      pool-prepared-statements: true
+
+    mysql:
+       url: jdbc:mysql://localhost:3306/dynamic_datasource##?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;failOverReadOnly=false&amp;zeroDateTimeBehavior=convertToNull
+       username: root
+       password: yuanli
+       driver-class-name: com.mysql.jdbc.Driver
+       initial-size: 5
+       max-idle: 10
+       min-idle: 5
+       max-active: 50
+       max-wait-millis: 10000
+       remove-abandoned-timeout: 180
+       test-on-borrow: true
+       test-on-return: false
+       validation-query: select 1
+       test-while-idle: true
+       pool-prepared-statements: true
+---
+server: 
+  port: 8989
+  tomcat: 
+    uri-encoding: UTF-8
+    max-threads: 5000
+---
+#动态数据源
+spring: 
+  application: 
+    name: spring-dynamic-datasource
+  boot: 
+    admin: 
+      client: 
+        prefer-ip: true
+  cloud: 
+    loadbalancer:
+      retry:
+        enabled: true
+---
+#actuator暴露的health接口权限是由两个配置： management.security.enabled 和 endpoints.health.sensitive组合的结果进行返回
+security:
+  basic:
+    enabled: false
+---
+logging:
+  file: spring-dynamic-datasource.log
+  level:
+    root: info 
+    mapper: debug 
+---
+############## swagger 配置开始 ####################
+#api名称
+api.name: 动态数据源
+#api描述说明
+api.desc: 动态数据源接口
+#api版本
+api.version: 1.0.0-SNAPSHOT
+#term of service服务条款
+api.tos: 无API服务条款
+#程序作者
+api.author: (578598624@qq.com)
+#程序许可类型
+api.license: 
+#程序许可说明url
+api.licenseURL: www.baidu.com
+#是否显示swagger
+swagger.show: true
+############## swagger 配置结束  ####################
+
+        
