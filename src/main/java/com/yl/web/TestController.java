@@ -26,6 +26,7 @@ public class TestController {
     @GetMapping("/testMysql")
     @ApiOperation("动态数据源测试--MySql")
     public List<Person> testMysql(){
+
         return testService.testMysql();
     }
 
